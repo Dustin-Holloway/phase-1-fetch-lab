@@ -1,7 +1,17 @@
 function fetchBooks() {
-  return fetch("https://anapioficeandfire.com/api/books")
-    .then((res) => res.json())
-    .then((json) => renderBooks(json));
+  return (
+    fetch("https://anapioficeandfire.com/api/books")
+      .then((res) => res.json())
+      // .then((json) =>
+      //   console.log(
+      //     json.map((item) => ({
+      //       dudes: item["characters"],
+      //       pages: item["numberOfPages"],
+      //     }))
+      //   )
+      // )
+      .then((json) => renderBooks(json))
+  );
 }
 
 function renderBooks(books) {
